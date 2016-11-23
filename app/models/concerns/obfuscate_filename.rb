@@ -8,7 +8,7 @@ module ObfuscateFilename
   end
 
   def obfuscate_filename(path)
-    file = Array(path).reduce { |params, key| params[key] }
+    file = params.dig(*Array(path))
     file.original_filename = "media" + File.extname(file.original_filename)
   end
 end
