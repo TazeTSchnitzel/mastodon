@@ -3,6 +3,8 @@
 class Api::V1::MediaController < ApiController
   before_action -> { doorkeeper_authorize! :write }
   before_action :require_user!
+
+  include ObfuscateFilename
   obfuscate_filename :file
 
   respond_to :json
