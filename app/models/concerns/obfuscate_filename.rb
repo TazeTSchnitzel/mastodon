@@ -9,6 +9,8 @@ module ObfuscateFilename
 
   def obfuscate_filename(path)
     file = params.dig(*path)
+    return if file.nil?
+
     file.original_filename = "media" + File.extname(file.original_filename)
   end
 end
