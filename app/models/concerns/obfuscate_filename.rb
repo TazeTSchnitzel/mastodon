@@ -1,8 +1,8 @@
 module ObfuscateFilename
   extend ActiveSupport::Concern
 
-  module ClassMethods
-    def self.obfuscate_filename(*args)
+  class_methods do
+    def obfuscate_filename(*args)
       before_action { obfuscate_filename(*args) }
     end
   end
